@@ -1,0 +1,155 @@
+<html>
+	<head>
+		<title>World Clock</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="refresh" content="60"/>
+		
+		 <script type="text/javascript">
+            window.onload=function(){
+                var d= new Date();
+		document.getElementById("localTime").value = d.toLocaleString(); 
+		
+				}  
+    
+			function getTime()
+		{
+			var date = document.getElementById("localTime").value;
+			var dt = new Date(date);
+			var city = document.getElementById("city");
+			var selectcity = city.options[city.selectedIndex].value;
+			var utc = dt.getTime() + (dt.getTimezoneOffset() * 60000);
+			
+			if(selectcity === "Aus") {
+				var lt =  new Date(utc + (3600000*(+10)));
+				targetTime.innerHTML= lt.toLocaleString() ;				
+			}
+			
+			else if(selectcity.localeCompare("Japan")==0) {
+				var lt =  new Date(utc + (3600000*(+9)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+			else if(selectcity.localeCompare("Chn")==0) {
+				var lt =  new Date(utc + (3600000*(+8)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+			else if(selectcity.localeCompare("HK")==0) {
+				var lt =  new Date(utc + (3600000*(+8)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+else if(selectcity.localeCompare("Sing")==0) {
+				var lt =  new Date(utc + (3600000*(+8)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+else if(selectcity.localeCompare("Mal")==0) {
+				var lt =  new Date(utc + (3600000*(+8)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+else if(selectcity.localeCompare("Phil")==0) {
+				var lt =  new Date(utc + (3600000*(+8)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+else if(selectcity.localeCompare("UK")==0) {
+				var lt =  new Date(utc + (3600000*(+1)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+else if(selectcity.localeCompare("Nether")==0) {
+				var lt =  new Date(utc + (3600000*(+2)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+else if(selectcity.localeCompare("Ger")==0) {
+				var lt =  new Date(utc + (3600000*(+2)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+else if(selectcity.localeCompare("Swiss")==0) {
+				var lt =  new Date(utc + (3600000*(+2)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+else if(selectcity.localeCompare("Fran")==0) {
+				var lt =  new Date(utc + (3600000*(+2)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+else if(selectcity.localeCompare("Pst")==0) {
+				var lt =  new Date(utc + (3600000*(-7)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+else if(selectcity.localeCompare("Mst")==0) {
+				var lt =  new Date(utc + (3600000*(-6)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+else if(selectcity.localeCompare("Cst")==0) {
+				var lt =  new Date(utc + (3600000*(-5)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+else if(selectcity.localeCompare("Est")==0) {
+				var lt =  new Date(utc + (3600000*(-4)));
+				targetTime.innerHTML= lt.toLocaleString() ;
+			}
+			
+		}
+	
+        </script>
+	</head>
+	<body>
+		<p>
+			&nbsp;</p>
+		<p>
+			&nbsp;</p>
+		<p>
+			&nbsp;</p>
+		<p>
+			&nbsp;</p>
+		<table align="center" border="5" cellpadding="1" cellspacing="1" style="width: 600px; height: 100px">
+			<tbody>
+				<tr>
+					<td style="text-align: center; background-color: rgb(153, 153, 153);">
+						<strong><span style="font-family:comic sans ms,cursive;">INDIAN TIME</span></strong></td>
+					<td style="text-align: center; background-color: rgb(153, 153, 153);">
+						<strong><span style="font-family:comic sans ms,cursive;">COUNTRY</span></strong></td>
+				</tr>
+				<tr>
+					<td style="text-align: center;">
+						<input type="text" id="localTime"></td>
+					<td style="text-align: center;">
+						<select id="city">
+    					<option value="Aus">Australia(AEST)</option>
+					<option value="Japan">Japan(JST)</option>
+    					<option value="Chn">China(CST)</option>
+					<option value="HK">Hong Kong(HKT)</option>
+					<option value="Sing">Singapore(SGT)</option>
+					<option value="Mal">Malaysia(MYT)</option>
+					<option value="Phil">Philippine(PHT)</option>
+					<option value="UK">UK(BST)</option>
+					<option value="Nether">Netherland(CEST)</option>
+					<option value="Ger">Germany(CEST)</option>
+					<option value="Swiss">Switzerland(CEST)</option>
+					<option value="Fran">France(CEST)</option>
+					<option value="Pst">Pacific Time Zone, USA(PST)</option>
+					<option value="Mst">Mountain Time Zone, USA(MST)</option>
+					<option value="Cst">Central Time Zone, USA(CST)</option>
+					<option value="Est">Eastern Time Zone, USA(EST)</option>
+    				</select>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+		<p style="text-align: center;">
+			<input name="Get Time" type="button" value="Get Time" id="submit" onclick="getTime()" /></p>
+		<p style="text-align: center;">
+			&nbsp;</p>
+		<table align="center" border="10" cellpadding="1" cellspacing="1" style="height: 100px; width: 350px">
+			<tbody>
+				<tr>
+					<td style="text-align: center;">
+						<span style="font-size:28px;"><strong id="targetTime"></strong></span></td>
+				</tr>
+			</tbody>
+		</table>
+		<p>
+			&nbsp;</p>
+<style type="text/css">
+body { background: url(https://ak9.picdn.net/shutterstock/videos/17965009/thumb/9.jpg); background-size: 100% 100%; }	
+	</style>
+	</body>
+</html>
